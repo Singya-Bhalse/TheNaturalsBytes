@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Maven'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/singyabhalse/TheNaturalsBytes.git']]])
+               checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '71eb0d90-c3af-4543-afca-4ea0934521ba', url: 'https://github.com/singyabhalse/TheNaturalsBytes.git']])
                 sh 'mvn clean install'
             }
         }
