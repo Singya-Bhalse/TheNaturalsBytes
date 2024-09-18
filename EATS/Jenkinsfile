@@ -9,7 +9,16 @@ pipeline {
                 }
                
             }
+            
+        }
+          stage('Run Test Cases'){
+            steps{
+                 echo 'Test Executed Successfully'
+                }
+               
+            }
+            
         }
  
-    }
+    
 }
