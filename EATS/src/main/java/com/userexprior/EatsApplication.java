@@ -12,6 +12,7 @@ public class EatsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EatsApplication.class, args);
+		System.out.println("EatsApplication ");
 	}
 
 }
