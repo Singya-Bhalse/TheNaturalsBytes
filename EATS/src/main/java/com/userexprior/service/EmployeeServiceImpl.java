@@ -58,7 +58,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public List<Object[]> findAllEmployee() {
-		entityManager.lock(Employee.class, LockModeType.OPTIMISTIC);
 		return employeeRepository.findAllEmployee();
 	}
 
