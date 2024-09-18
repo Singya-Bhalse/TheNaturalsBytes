@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages{
+        stage('Build Maven'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/singyabhalse/TheNaturalsBytes.git']]])
+                dir(env.WORKSPACE+ '/EATS') {
+                     bat 'mvn clean install'
+                }
+               
+            }
+        }
+ 
+    }
+}
