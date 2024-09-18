@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Maven'){
             steps{
-              checkout scmGit(branches: [[name: '*/JenkensDemo']], url: 'https://github.com/singyabhalse/TheNaturalsBytes.git']])
+              checkout scmGit(branches: [[name: 'https://github.com/singyabhalse/TheNaturalsBytes/tree/JenkensDemo/EATS']] url: 'https://github.com/singyabhalse/TheNaturalsBytes.git']])
                 sh 'mvn clean install'
             }
         }
