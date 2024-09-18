@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    tools{
+        maven 'maven_3_5_0'
+    }
+    stages{
+        stage('Build Maven'){
+            steps{
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '011badc9-42bc-4663-812b-edc13cbaaf4f', url: 'https://github.com/singyabhalse/TheNaturalsBytes.git']])
+                sh 'mvn clean install'
+            }
+        }
+ 
+    }
+}
